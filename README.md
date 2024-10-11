@@ -49,14 +49,18 @@ Durante la fase de limpieza de datos, se adoptaron las siguientes decisiones par
 
 
 ## 3. Resultados
-Se probaron varios modelos de predicción, incluyendo:
 
-- **XGBoost**: Este modelo se ajustó utilizando una hiperparametrización con GridSearchCV, y se aplicó la transformación inversa de Box-Cox para obtener los valores predichos.
-- **ARIMA**: Utilizado como modelo base para la comparación de resultados.
+### 3.1 Resultados del análisis estadístico
+La **Ciudad de Barcelona** ha invertido más en **Cultura i esport**, especialmente desde 2020. **Economía** y **Districtes** han recibido fondos de manera constante, mientras que las subvenciones a **Urbanisme** y **Drets socials** han disminuido en los últimos años. En general, la prioridad reciente parece estar en cultura y áreas de interés más diversas.
 
+### 3.2 Resultados del forecasting
+Se implementaron diferentes modelos de predicción, como **XGBoost** y **ARIMA**, para prever el importe total de subvenciones que se otorgarán en el mes de septiembre de 2024. Los resultados clave son:
 
+- **XGBoost**: Este modelo proporcionó el mejor rendimiento con un **RMSE** significativamente más bajo en comparación con ARIMA. Sin embargo, se detectaron altos valores de **MAPE** para subvenciones de gran importe, lo que sugiere dificultades en la predicción de valores extremos.
+- **ARIMA**: Aunque fue utilizado como modelo base, presentó un RMSE más alto y menor precisión en general.
+  
+El **forecasting** sugiere que, en septiembre de 2024, las áreas con mayores niveles de inversión seguirán siendo **Cultura i esport** y **Altres Àrees d'Interès**, mientras que otras áreas podrían mantener tendencias estables o decrecientes.
 
-Los resultados mostraron que el modelo **XGBoost** tuvo un RMSE significativamente menor comparado con **ARIMA**, aunque se detectaron valores con un MAPE elevado para algunos importes superiores a 500.000.
 
 ## 4. Conclusiones
 Las principales conclusiones derivadas de este proyecto son:
