@@ -73,16 +73,12 @@ Finalmente, se optó por utilizar **XGBoost** debido a su mejor rendimiento en t
 
 
 ## 4. Conclusiones
-Las principales conclusiones derivadas de este proyecto son:
+El análisis de los datos de subvenciones concedidas por la **Ciudad de Barcelona** nos ha permitido identificar patrones claros de inversión en distintas áreas de interés a lo largo de los años. Se ha observado que áreas como **Cultura y deporte** han sido prioritarias desde 2020, con un enfoque continuo en sectores culturales y de interés más amplio. Esta tendencia refuerza el compromiso de la ciudad con la promoción de actividades culturales y recreativas, así como con proyectos más diversos.
 
-- La transformación de Box-Cox, combinada con la diferenciación, mejoró significativamente la estabilidad de las predicciones para subvenciones de menor importe.
-- Se detectó que los valores de subvenciones con importes muy elevados (a partir de 500.000) presentan más dificultades en la predicción, aumentando el MAPE.
-- Para futuras mejoras, se recomienda explorar la segmentación de los modelos según el tamaño de las subvenciones para reducir el sesgo causado por los valores extremos.
+En cuanto a la predicción del **Importe Total Atorgado**, tras evaluar los modelos **XGBoost**, **CatBoost** y **ARIMA**, se eligió **XGBoost** por ofrecer el menor **RMSE** (441,278), lo que garantiza una mayor precisión absoluta. Aunque el **MAPE** de **XGBoost** es del **7.28%**, este margen de error es aceptable para la planificación financiera del **Ayuntamiento**, que siempre se reserva un margen de seguridad en sus previsiones.
 
-Los resultados finales pueden servir de base para optimizar la distribución de subvenciones y mejorar la planificación financiera.
+La principal inferencia derivada de este análisis es que los **modelos predictivos** pueden ser una herramienta útil para la **planificación estratégica**. En particular, el modelo permite al **Ayuntamiento** anticipar las necesidades de financiamiento mes a mes y ajustar su distribución de recursos con mayor precisión, especialmente en áreas de interés prioritarias. A largo plazo, este tipo de análisis puede ayudar a mejorar la eficiencia en la asignación de fondos públicos, permitiendo optimizar los recursos disponibles en función de las necesidades reales de los distintos sectores.
 
+Además, la diferenciación entre **proyectos pequeños y grandes** es clave para entender cómo el **Ayuntamiento** podría ajustar su enfoque en el futuro. Los **proyectos más grandes** tienden a recibir un importe más acorde con sus necesidades, mientras que los **proyectos pequeños** suelen tener una mayor discrepancia entre el importe solicitado y el concedido. Este es un aspecto a considerar en la mejora de futuras políticas de subvenciones.
 
-La transformación de Box-Cox, combinada con la diferenciación, mejoró significativamente la estabilidad de las predicciones para subvenciones de menor importe.
-Se detectó que los valores de subvenciones con importes muy elevados (a partir de 500.000) presentan más dificultades en la predicción, aumentando el MAPE.
-Para futuras mejoras, se recomienda explorar la segmentación de los modelos según el tamaño de las subvenciones para reducir el sesgo causado por los valores extremos.
-Los resultados finales pueden servir de base para optimizar la distribución de subvenciones y mejorar la planificación financiera.
+En resumen, el análisis no solo proporciona un **modelo de previsión útil** para la planificación, sino que también sugiere áreas clave donde el **Ayuntamiento de Barcelona** puede refinar y mejorar la distribución de subvenciones en el futuro, garantizando una mayor equidad y eficiencia en el proceso.
