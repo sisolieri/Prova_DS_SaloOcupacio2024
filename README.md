@@ -18,7 +18,8 @@ A partir de la información inicial disponible, se obtuvieron las siguientes var
 - **Bucket_Import_Atorgat**: Clasificación por rangos del importe concedido.
 
 
-El propósito del proyecto es extraer información útil sobre la distribución de subvenciones y proporcionar al Ayuntamiento una herramienta de previsión que pueda ayudar la planificación financiera y la asignación de recursos.
+El propósito del proyecto es extraer información útil sobre la distribución de subvenciones y proporcionar al Ayuntamiento una herramienta de previsión que pueda ayudar la planificación financiera y la asignación de recursos. En concreto, a partir de los datos disponibles hasta agosto de 2024, se desarrolló un modelo capaz de predecir el importe total que se desembolsará en subvenciones durante septiembre de 2024, desglosado por área de interés y por rango de importe concedido.
+
 
 ## 2. Depuración de datos y criterios de evaluación del modelo
 ### Limpieza profunda de las variables de interés
@@ -51,15 +52,24 @@ Durante la fase de limpieza de datos, se adoptaron las siguientes decisiones par
 ## 3. Resultados
 
 ### 3.1 Resultados del análisis estadístico
-La **Ciudad de Barcelona** ha invertido más en **Cultura i esport**, especialmente desde 2020. **Economía** y **Districtes** han recibido fondos de manera constante, mientras que las subvenciones a **Urbanisme** y **Drets socials** han disminuido en los últimos años. En general, la prioridad reciente parece estar en cultura y áreas de interés más diversas.
+
+La **Ciudad de Barcelona** ha invertido más en **Cultura y deporte** y **Otras Áreas de Interés**, especialmente desde 2020, con fluctuaciones en estos sectores. **Economía** y **Distritos** han recibido fondos de manera constante, mientras que las subvenciones a **Urbanismo** y **Derechos sociales** han disminuido en los últimos años. En general, la prioridad reciente parece estar en cultura y áreas de interés más diversas.
+
+Barcelona distribuye las subvenciones más pequeñas principalmente en áreas como **Derechos sociales y personas con discapacidad** y **Economía**, mientras que las más grandes se concentran en **Cultura y deporte**, **Otras Áreas de Interés** y **Urbanismo**. En cuanto a la tipología, las subvenciones menores suelen ser **ayudas específicas** como la relacionada con el **IBI**, mientras que las de mayor importe se destinan a **transferencias a entes públicos** y proyectos de mayor envergadura.
 
 ### 3.2 Resultados del forecasting
-Se implementaron diferentes modelos de predicción, como **XGBoost** y **ARIMA**, para prever el importe total de subvenciones que se otorgarán en el mes de septiembre de 2024. Los resultados clave son:
 
-- **XGBoost**: Este modelo proporcionó el mejor rendimiento con un **RMSE** significativamente más bajo en comparación con ARIMA. Sin embargo, se detectaron altos valores de **MAPE** para subvenciones de gran importe, lo que sugiere dificultades en la predicción de valores extremos.
-- **ARIMA**: Aunque fue utilizado como modelo base, presentó un RMSE más alto y menor precisión en general.
-  
-El **forecasting** sugiere que, en septiembre de 2024, las áreas con mayores niveles de inversión seguirán siendo **Cultura i esport** y **Altres Àrees d'Interès**, mientras que otras áreas podrían mantener tendencias estables o decrecientes.
+Para realizar el forecasting del **Importe Total Ortogado** de las subvenciones, se evaluaron tres modelos: **XGBoost**, **CatBoost** y **ARIMA**. Los resultados de las métricas utilizadas, **RMSE** y **MAPE**, fueron los siguientes:
+
+| Modelo   | RMSE         | MAPE  |
+|----------|--------------|-------|
+| XGBoost  | 441,278.95   | 7.28  |
+| CatBoost | 442,515.47   | 7.15  |
+| ARIMA    | 651,207.72   | 7.11  |
+
+De los tres modelos, **XGBoost** presenta el menor **RMSE**, lo que indica que tiene un menor error absoluto en sus predicciones, aunque su **MAPE** es ligeramente mayor que el de los otros modelos. Por otro lado, **ARIMA** tiene el **MAPE** más bajo, lo que significa que, en términos porcentuales, sus predicciones son más precisas. Sin embargo, presenta un **RMSE** más alto, lo que indica una mayor variabilidad en las diferencias absolutas con respecto a los valores reales.
+
+Finalmente, se optó por utilizar **XGBoost** debido a su mejor rendimiento en términos absolutos, lo que lo hace más adecuado para este tipo de previsión financiera. A pesar de las diferencias entre los modelos, no se consideró necesario realizar una hiperparametrización. Esto se debe a que el modelo cumple su función principal de servir como una herramienta de orientación para la **planificación financiera del Ayuntamiento**. Dado que el Ayuntamiento siempre toma un **margen de seguridad** en sus decisiones, los resultados obtenidos ya ofrecen suficiente precisión para prever el **importe total de las subvenciones** y facilitar la toma de decisiones sin necesidad de reducir aún más el error.
 
 
 ## 4. Conclusiones
