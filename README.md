@@ -55,7 +55,7 @@ Durante la fase de limpieza de datos, se adoptaron las siguientes decisiones par
 
 La **Ciudad de Barcelona** ha invertido más en **Cultura y deporte** y **Otras Áreas de Interés**, especialmente desde 2020, con fluctuaciones en estos sectores. **Economía** y **Distritos** han recibido fondos de manera constante, mientras que las subvenciones a **Urbanismo** y **Derechos sociales** han disminuido en los últimos años. En general, la prioridad reciente parece estar en cultura y áreas de interés más diversas.
 
-Barcelona distribuye las subvenciones más pequeñas principalmente en áreas como **Derechos sociales y personas con discapacidad** y **Economía**, mientras que las más grandes se concentran en **Cultura y deporte**, **Otras Áreas de Interés** y **Urbanismo**. En cuanto a la tipología, las subvenciones menores suelen ser **ayudas específicas** como la relacionada con el **IBI**, mientras que las de mayor importe se destinan a **transferencias a entes públicos** y proyectos de mayor envergadura.
+Barcelona distribuye las subvenciones más pequeñas principalmente en áreas como **Derechos sociales y personas con discapacidad** y **Economía**, mientras que las más grandes se concentran en **Cultura y deporte** y **Urbanismo**. En cuanto a la tipología, las subvenciones menores suelen ser **ayudas específicas** como la relacionada con el **IBI**, mientras que las de mayor importe se destinan a **transferencias a entes públicos** y proyectos de mayor envergadura.
 
 ### 3.2 Resultados del forecasting
 
